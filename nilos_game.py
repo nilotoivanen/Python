@@ -1,7 +1,7 @@
 import datetime_helper
 import print_cool_graphics
 
-
+print("HAHHAHHAAA THIS IS MY NEW CHANGE TO YOUR CODE")
 year = 2024
 sec_in_day = 86400
 days_in_year = 365
