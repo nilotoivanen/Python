@@ -9,7 +9,7 @@ def calculate_age_in_seconds(birthdate):
     current_timestamp = time.time()
     
     # Beräkna ålder i sekunder
-    age_in_seconds = current_timestamp - birth_timestamp
+    age_in_seconds = int(current_timestamp - birth_timestamp)
     
     return age_in_seconds
 
@@ -46,3 +46,25 @@ if __name__ == "__main__":
     birthdate = input("Ange ditt födelsedatum (ÅÅÅÅ-MM-DD): ")
     age_in_days = calculate_age_in_days(birthdate)
     print("Du är ungefär", age_in_days, "dagar gammal.")
+
+    from datetime import datetime
+
+def days_until_birthday(birth_date_str):
+    # Parse the birth date string into a datetime object
+    birth_date = datetime.strptime(birth_date_str, "%Y-%m-%d").date()
+
+    # Get the current date
+    current_date = datetime.now().date()
+
+    # Set the year of the current date to the same as the birth date
+    current_date = current_date.replace(year=birth_date.year)
+
+    # If the birthday has passed this year, set it to next year
+    if current_date > birth_date:
+        birth_date = birth_date.replace(year=current_date.year + 1)
+
+    # Calculate the difference in days
+    difference = birth_date - current_date
+
+    return difference.days
+
