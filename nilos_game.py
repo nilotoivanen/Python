@@ -94,7 +94,5 @@ def val_c():
 
 # Nu kan du använda val3 och val_c-funktionerna som du önskar
 
-
-
 if __name__ == "__main__":
     game()
